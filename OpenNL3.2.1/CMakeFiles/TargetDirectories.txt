@@ -1,0 +1,3 @@
+/Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/CMakeFiles/mmtx.dir
+/Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/CMakeFiles/nl.dir
+/Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/lscm_NL/CMakeFiles/parameterize.dir
