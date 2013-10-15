@@ -52,7 +52,7 @@ SET(BUILD_EXAMPLES TRUE)
 # (with a single underscore) rather than -DAdd__ (with two
 # underscores). If you got two underscores, remove the 
 # second one, make clean and re-make SuperLU.
-#SET(USE_SUPERLU TRUE)
+SET(USE_SUPERLU TRUE)
 
 # Edit these lines to match your installation
 SET(SUPERLU_HOME /home/yourself/SuperLU_4.0 )

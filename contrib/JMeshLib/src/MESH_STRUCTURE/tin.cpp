@@ -1254,7 +1254,7 @@ List* Triangulation::getComponentsList() {
             component = new List;
             components->appendHead(component);
             todo.appendHead(t);
-            while (t = (Triangle*) todo.popHead()) {
+            while ((t = (Triangle*) todo.popHead())) {
                 if (!IS_VISITED2(t)) {
                     t1 = t->t1();
                     t2 = t->t2();

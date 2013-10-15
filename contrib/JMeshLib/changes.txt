@@ -1,3 +1,10 @@
+From 1.1 to 1.2
+
+- dijkstraGraph
+  - added methods getNodes() and getNumNodes()
+
+----------------------------------------------------------------------
+
 From 1.0 to 1.1
 
 - SymMatrix3x3

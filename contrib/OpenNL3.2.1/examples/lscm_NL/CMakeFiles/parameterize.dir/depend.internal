@@ -3,5 +3,5 @@
 
 examples/lscm_NL/CMakeFiles/parameterize.dir/lscm_with_c_api.o
  /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/lscm_NL/lscm_with_c_api.cpp
- src/NL/nl.h
- src/NL/nl_linkage.h
+ /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl.h
+ /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_linkage.h

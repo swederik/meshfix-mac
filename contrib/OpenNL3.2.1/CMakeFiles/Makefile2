@@ -53,7 +53,7 @@ CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
 CMAKE_SOURCE_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
+CMAKE_BINARY_DIR = /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1
 
 #=============================================================================
 # Directory level rules for directory src
@@ -77,7 +77,7 @@ src/preinstall:
 src/CMakeFiles/nl.dir/all:
 	$(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/depend
 	$(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles  3 4 5 6 7 8 9 10 11
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles  3 4 5 6 7 8 9 10 11
 	@echo "Built target nl"
 .PHONY : src/CMakeFiles/nl.dir/all
 
@@ -87,9 +87,9 @@ all: src/CMakeFiles/nl.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/nl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/nl.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 0
 .PHONY : src/CMakeFiles/nl.dir/rule
 
 # Convenience name for target.
@@ -145,7 +145,7 @@ examples/lscm_NL/preinstall:
 examples/lscm_NL/CMakeFiles/parameterize.dir/all: src/CMakeFiles/nl.dir/all
 	$(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/depend
 	$(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles  12
 	@echo "Built target parameterize"
 .PHONY : examples/lscm_NL/CMakeFiles/parameterize.dir/all
 
@@ -155,9 +155,9 @@ all: examples/lscm_NL/CMakeFiles/parameterize.dir/all
 
 # Build rule for subdir invocation for target.
 examples/lscm_NL/CMakeFiles/parameterize.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/CMakeFiles/parameterize.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 0
 .PHONY : examples/lscm_NL/CMakeFiles/parameterize.dir/rule
 
 # Convenience name for target.
@@ -195,7 +195,7 @@ examples/mmtx/preinstall:
 examples/mmtx/CMakeFiles/mmtx.dir/all: src/CMakeFiles/nl.dir/all
 	$(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/depend
 	$(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles  1 2
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles  1 2
 	@echo "Built target mmtx"
 .PHONY : examples/mmtx/CMakeFiles/mmtx.dir/all
 
@@ -205,9 +205,9 @@ all: examples/mmtx/CMakeFiles/mmtx.dir/all
 
 # Build rule for subdir invocation for target.
 examples/mmtx/CMakeFiles/mmtx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/CMakeFiles/mmtx.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 0
 .PHONY : examples/mmtx/CMakeFiles/mmtx.dir/rule
 
 # Convenience name for target.

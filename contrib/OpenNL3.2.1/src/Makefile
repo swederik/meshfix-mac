@@ -45,7 +45,7 @@ CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
 CMAKE_SOURCE_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
+CMAKE_BINARY_DIR = /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/CMakeFiles/progress.marks
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 0
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src/CMakeFiles/progress.marks
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,22 +88,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/nl.dir/rule:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/nl.dir/rule
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/nl.dir/rule
 .PHONY : src/CMakeFiles/nl.dir/rule
 
 # Convenience name for target.
@@ -112,142 +112,142 @@ nl: src/CMakeFiles/nl.dir/rule
 
 # fast build rule for target.
 nl/fast:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/build
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/build
 .PHONY : nl/fast
 
 # target to build an object file
 NL/nl_api.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_api.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_api.o
 .PHONY : NL/nl_api.o
 
 # target to preprocess a source file
 NL/nl_api.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_api.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_api.i
 .PHONY : NL/nl_api.i
 
 # target to generate assembly for a file
 NL/nl_api.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_api.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_api.s
 .PHONY : NL/nl_api.s
 
 # target to build an object file
 NL/nl_blas.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_blas.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_blas.o
 .PHONY : NL/nl_blas.o
 
 # target to preprocess a source file
 NL/nl_blas.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_blas.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_blas.i
 .PHONY : NL/nl_blas.i
 
 # target to generate assembly for a file
 NL/nl_blas.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_blas.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_blas.s
 .PHONY : NL/nl_blas.s
 
 # target to build an object file
 NL/nl_cnc_gpu_cuda.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o
 .PHONY : NL/nl_cnc_gpu_cuda.o
 
 # target to preprocess a source file
 NL/nl_cnc_gpu_cuda.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.i
 .PHONY : NL/nl_cnc_gpu_cuda.i
 
 # target to generate assembly for a file
 NL/nl_cnc_gpu_cuda.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.s
 .PHONY : NL/nl_cnc_gpu_cuda.s
 
 # target to build an object file
 NL/nl_context.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_context.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_context.o
 .PHONY : NL/nl_context.o
 
 # target to preprocess a source file
 NL/nl_context.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_context.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_context.i
 .PHONY : NL/nl_context.i
 
 # target to generate assembly for a file
 NL/nl_context.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_context.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_context.s
 .PHONY : NL/nl_context.s
 
 # target to build an object file
 NL/nl_iterative_solvers.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o
 .PHONY : NL/nl_iterative_solvers.o
 
 # target to preprocess a source file
 NL/nl_iterative_solvers.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.i
 .PHONY : NL/nl_iterative_solvers.i
 
 # target to generate assembly for a file
 NL/nl_iterative_solvers.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.s
 .PHONY : NL/nl_iterative_solvers.s
 
 # target to build an object file
 NL/nl_matrix.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_matrix.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_matrix.o
 .PHONY : NL/nl_matrix.o
 
 # target to preprocess a source file
 NL/nl_matrix.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_matrix.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_matrix.i
 .PHONY : NL/nl_matrix.i
 
 # target to generate assembly for a file
 NL/nl_matrix.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_matrix.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_matrix.s
 .PHONY : NL/nl_matrix.s
 
 # target to build an object file
 NL/nl_os.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_os.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_os.o
 .PHONY : NL/nl_os.o
 
 # target to preprocess a source file
 NL/nl_os.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_os.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_os.i
 .PHONY : NL/nl_os.i
 
 # target to generate assembly for a file
 NL/nl_os.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_os.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_os.s
 .PHONY : NL/nl_os.s
 
 # target to build an object file
 NL/nl_preconditioners.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_preconditioners.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_preconditioners.o
 .PHONY : NL/nl_preconditioners.o
 
 # target to preprocess a source file
 NL/nl_preconditioners.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_preconditioners.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_preconditioners.i
 .PHONY : NL/nl_preconditioners.i
 
 # target to generate assembly for a file
 NL/nl_preconditioners.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_preconditioners.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_preconditioners.s
 .PHONY : NL/nl_preconditioners.s
 
 # target to build an object file
 NL/nl_superlu.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_superlu.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_superlu.o
 .PHONY : NL/nl_superlu.o
 
 # target to preprocess a source file
 NL/nl_superlu.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_superlu.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_superlu.i
 .PHONY : NL/nl_superlu.i
 
 # target to generate assembly for a file
 NL/nl_superlu.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_superlu.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f src/CMakeFiles/nl.dir/build.make src/CMakeFiles/nl.dir/NL/nl_superlu.s
 .PHONY : NL/nl_superlu.s
 
 # Help Target
@@ -297,6 +297,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

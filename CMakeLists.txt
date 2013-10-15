@@ -1,16 +1,21 @@
 cmake_minimum_required (VERSION 2.6)
 project (MeshFix)
 add_subdirectory(contrib/JMeshLib)
+add_library (superlu SHARED IMPORTED)
+set_target_properties( superlu PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/contrib/superlu/libsuperlu_4.3.a )
+
 include_directories(
     include
-    /usr/include/superlu
+    contrib/superlu
     contrib/JMeshLib/include
     contrib/OpenNL3.2.1/src
     contrib/jrs_predicates
+    contrib/superlu
 )
 link_directories(
     ${LINK_DIRECTORIES}
     ${CMAKE_CURRENT_SOURCE_DIR}/contrib/JMeshLib/lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/contrib/superlu
 )
 file(GLOB meshfix_h include/*.h)
 set(meshfix_src

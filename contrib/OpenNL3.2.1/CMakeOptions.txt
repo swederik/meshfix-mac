@@ -55,7 +55,7 @@ SET(BUILD_EXAMPLES TRUE)
 SET(USE_SUPERLU TRUE)
 
 # Edit these lines to match your installation
-SET(SUPERLU_HOME /Users/erik/Dropbox/MacCode/SuperLU_4.3 )
+SET(SUPERLU_HOME /Developer/SuperLU_4.3 )
 SET(SUPERLU_NAME SuperLU_4.3)
 
 ###########

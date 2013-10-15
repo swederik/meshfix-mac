@@ -41,7 +41,7 @@ CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
 CMAKE_SOURCE_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
+CMAKE_BINARY_DIR = /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1
 
 # Include any dependencies generated for this target.
 include examples/mmtx/CMakeFiles/mmtx.dir/depend.make
@@ -53,18 +53,18 @@ include examples/mmtx/CMakeFiles/mmtx.dir/progress.make
 include examples/mmtx/CMakeFiles/mmtx.dir/flags.make
 
 examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o: examples/mmtx/CMakeFiles/mmtx.dir/flags.make
-examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o: examples/mmtx/mmtx.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_1)
+examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmtx.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/mmtx.dir/mmtx.o -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmtx.cpp
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/mmtx.dir/mmtx.o -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmtx.cpp
 
 examples/mmtx/CMakeFiles/mmtx.dir/mmtx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mmtx.dir/mmtx.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmtx.cpp > CMakeFiles/mmtx.dir/mmtx.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmtx.cpp > CMakeFiles/mmtx.dir/mmtx.i
 
 examples/mmtx/CMakeFiles/mmtx.dir/mmtx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mmtx.dir/mmtx.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmtx.cpp -o CMakeFiles/mmtx.dir/mmtx.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmtx.cpp -o CMakeFiles/mmtx.dir/mmtx.s
 
 examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o.requires:
 .PHONY : examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o.requires
@@ -76,18 +76,18 @@ examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o.provides: examples/mmtx/CMakeFiles/mmtx
 examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o.provides.build: examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o
 
 examples/mmtx/CMakeFiles/mmtx.dir/mmio.o: examples/mmtx/CMakeFiles/mmtx.dir/flags.make
-examples/mmtx/CMakeFiles/mmtx.dir/mmio.o: examples/mmtx/mmio.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_2)
+examples/mmtx/CMakeFiles/mmtx.dir/mmio.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmio.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object examples/mmtx/CMakeFiles/mmtx.dir/mmio.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/mmtx.dir/mmio.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmio.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/mmtx.dir/mmio.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmio.c
 
 examples/mmtx/CMakeFiles/mmtx.dir/mmio.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mmtx.dir/mmio.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmio.c > CMakeFiles/mmtx.dir/mmio.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmio.c > CMakeFiles/mmtx.dir/mmio.i
 
 examples/mmtx/CMakeFiles/mmtx.dir/mmio.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mmtx.dir/mmio.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmio.c -o CMakeFiles/mmtx.dir/mmio.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmio.c -o CMakeFiles/mmtx.dir/mmio.s
 
 examples/mmtx/CMakeFiles/mmtx.dir/mmio.o.requires:
 .PHONY : examples/mmtx/CMakeFiles/mmtx.dir/mmio.o.requires
@@ -112,7 +112,7 @@ binaries/bin/mmtx: examples/mmtx/CMakeFiles/mmtx.dir/build.make
 binaries/bin/mmtx: binaries/lib/libnl.a
 binaries/bin/mmtx: examples/mmtx/CMakeFiles/mmtx.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../../binaries/bin/mmtx"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmtx.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mmtx.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 examples/mmtx/CMakeFiles/mmtx.dir/build: binaries/bin/mmtx
@@ -123,10 +123,10 @@ examples/mmtx/CMakeFiles/mmtx.dir/requires: examples/mmtx/CMakeFiles/mmtx.dir/mm
 .PHONY : examples/mmtx/CMakeFiles/mmtx.dir/requires
 
 examples/mmtx/CMakeFiles/mmtx.dir/clean:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx && $(CMAKE_COMMAND) -P CMakeFiles/mmtx.dir/cmake_clean.cmake
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx && $(CMAKE_COMMAND) -P CMakeFiles/mmtx.dir/cmake_clean.cmake
 .PHONY : examples/mmtx/CMakeFiles/mmtx.dir/clean
 
 examples/mmtx/CMakeFiles/mmtx.dir/depend:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/CMakeFiles/mmtx.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx/CMakeFiles/mmtx.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : examples/mmtx/CMakeFiles/mmtx.dir/depend
 

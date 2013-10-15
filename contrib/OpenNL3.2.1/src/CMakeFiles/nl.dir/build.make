@@ -41,7 +41,7 @@ CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
 CMAKE_SOURCE_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
+CMAKE_BINARY_DIR = /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/nl.dir/depend.make
@@ -53,18 +53,18 @@ include src/CMakeFiles/nl.dir/progress.make
 include src/CMakeFiles/nl.dir/flags.make
 
 src/CMakeFiles/nl.dir/NL/nl_api.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_api.o: src/NL/nl_api.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_1)
+src/CMakeFiles/nl.dir/NL/nl_api.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_api.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_api.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_api.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_api.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_api.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_api.c
 
 src/CMakeFiles/nl.dir/NL/nl_api.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_api.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_api.c > CMakeFiles/nl.dir/NL/nl_api.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_api.c > CMakeFiles/nl.dir/NL/nl_api.i
 
 src/CMakeFiles/nl.dir/NL/nl_api.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_api.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_api.c -o CMakeFiles/nl.dir/NL/nl_api.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_api.c -o CMakeFiles/nl.dir/NL/nl_api.s
 
 src/CMakeFiles/nl.dir/NL/nl_api.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_api.o.requires
@@ -76,18 +76,18 @@ src/CMakeFiles/nl.dir/NL/nl_api.o.provides: src/CMakeFiles/nl.dir/NL/nl_api.o.re
 src/CMakeFiles/nl.dir/NL/nl_api.o.provides.build: src/CMakeFiles/nl.dir/NL/nl_api.o
 
 src/CMakeFiles/nl.dir/NL/nl_blas.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_blas.o: src/NL/nl_blas.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_2)
+src/CMakeFiles/nl.dir/NL/nl_blas.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_blas.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_blas.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_blas.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_blas.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_blas.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_blas.c
 
 src/CMakeFiles/nl.dir/NL/nl_blas.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_blas.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_blas.c > CMakeFiles/nl.dir/NL/nl_blas.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_blas.c > CMakeFiles/nl.dir/NL/nl_blas.i
 
 src/CMakeFiles/nl.dir/NL/nl_blas.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_blas.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_blas.c -o CMakeFiles/nl.dir/NL/nl_blas.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_blas.c -o CMakeFiles/nl.dir/NL/nl_blas.s
 
 src/CMakeFiles/nl.dir/NL/nl_blas.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_blas.o.requires
@@ -99,18 +99,18 @@ src/CMakeFiles/nl.dir/NL/nl_blas.o.provides: src/CMakeFiles/nl.dir/NL/nl_blas.o.
 src/CMakeFiles/nl.dir/NL/nl_blas.o.provides.build: src/CMakeFiles/nl.dir/NL/nl_blas.o
 
 src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o: src/NL/nl_cnc_gpu_cuda.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_3)
+src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_cnc_gpu_cuda.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_cnc_gpu_cuda.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_cnc_gpu_cuda.c
 
 src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_cnc_gpu_cuda.c > CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_cnc_gpu_cuda.c > CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.i
 
 src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_cnc_gpu_cuda.c -o CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_cnc_gpu_cuda.c -o CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.s
 
 src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o.requires
@@ -122,18 +122,18 @@ src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o.provides: src/CMakeFiles/nl.dir/NL/nl
 src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o.provides.build: src/CMakeFiles/nl.dir/NL/nl_cnc_gpu_cuda.o
 
 src/CMakeFiles/nl.dir/NL/nl_context.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_context.o: src/NL/nl_context.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_4)
+src/CMakeFiles/nl.dir/NL/nl_context.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_context.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_context.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_context.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_context.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_context.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_context.c
 
 src/CMakeFiles/nl.dir/NL/nl_context.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_context.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_context.c > CMakeFiles/nl.dir/NL/nl_context.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_context.c > CMakeFiles/nl.dir/NL/nl_context.i
 
 src/CMakeFiles/nl.dir/NL/nl_context.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_context.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_context.c -o CMakeFiles/nl.dir/NL/nl_context.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_context.c -o CMakeFiles/nl.dir/NL/nl_context.s
 
 src/CMakeFiles/nl.dir/NL/nl_context.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_context.o.requires
@@ -145,18 +145,18 @@ src/CMakeFiles/nl.dir/NL/nl_context.o.provides: src/CMakeFiles/nl.dir/NL/nl_cont
 src/CMakeFiles/nl.dir/NL/nl_context.o.provides.build: src/CMakeFiles/nl.dir/NL/nl_context.o
 
 src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o: src/NL/nl_iterative_solvers.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_5)
+src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_iterative_solvers.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_iterative_solvers.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_iterative_solvers.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_iterative_solvers.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_iterative_solvers.c
 
 src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_iterative_solvers.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_iterative_solvers.c > CMakeFiles/nl.dir/NL/nl_iterative_solvers.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_iterative_solvers.c > CMakeFiles/nl.dir/NL/nl_iterative_solvers.i
 
 src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_iterative_solvers.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_iterative_solvers.c -o CMakeFiles/nl.dir/NL/nl_iterative_solvers.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_iterative_solvers.c -o CMakeFiles/nl.dir/NL/nl_iterative_solvers.s
 
 src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o.requires
@@ -168,18 +168,18 @@ src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o.provides: src/CMakeFiles/nl.dir/
 src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o.provides.build: src/CMakeFiles/nl.dir/NL/nl_iterative_solvers.o
 
 src/CMakeFiles/nl.dir/NL/nl_matrix.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_matrix.o: src/NL/nl_matrix.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_6)
+src/CMakeFiles/nl.dir/NL/nl_matrix.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_matrix.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_matrix.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_matrix.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_matrix.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_matrix.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_matrix.c
 
 src/CMakeFiles/nl.dir/NL/nl_matrix.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_matrix.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_matrix.c > CMakeFiles/nl.dir/NL/nl_matrix.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_matrix.c > CMakeFiles/nl.dir/NL/nl_matrix.i
 
 src/CMakeFiles/nl.dir/NL/nl_matrix.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_matrix.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_matrix.c -o CMakeFiles/nl.dir/NL/nl_matrix.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_matrix.c -o CMakeFiles/nl.dir/NL/nl_matrix.s
 
 src/CMakeFiles/nl.dir/NL/nl_matrix.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_matrix.o.requires
@@ -191,18 +191,18 @@ src/CMakeFiles/nl.dir/NL/nl_matrix.o.provides: src/CMakeFiles/nl.dir/NL/nl_matri
 src/CMakeFiles/nl.dir/NL/nl_matrix.o.provides.build: src/CMakeFiles/nl.dir/NL/nl_matrix.o
 
 src/CMakeFiles/nl.dir/NL/nl_os.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_os.o: src/NL/nl_os.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_7)
+src/CMakeFiles/nl.dir/NL/nl_os.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_os.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_os.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_os.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_os.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_os.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_os.c
 
 src/CMakeFiles/nl.dir/NL/nl_os.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_os.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_os.c > CMakeFiles/nl.dir/NL/nl_os.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_os.c > CMakeFiles/nl.dir/NL/nl_os.i
 
 src/CMakeFiles/nl.dir/NL/nl_os.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_os.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_os.c -o CMakeFiles/nl.dir/NL/nl_os.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_os.c -o CMakeFiles/nl.dir/NL/nl_os.s
 
 src/CMakeFiles/nl.dir/NL/nl_os.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_os.o.requires
@@ -214,18 +214,18 @@ src/CMakeFiles/nl.dir/NL/nl_os.o.provides: src/CMakeFiles/nl.dir/NL/nl_os.o.requ
 src/CMakeFiles/nl.dir/NL/nl_os.o.provides.build: src/CMakeFiles/nl.dir/NL/nl_os.o
 
 src/CMakeFiles/nl.dir/NL/nl_preconditioners.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_preconditioners.o: src/NL/nl_preconditioners.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_8)
+src/CMakeFiles/nl.dir/NL/nl_preconditioners.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_preconditioners.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_preconditioners.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_preconditioners.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_preconditioners.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_preconditioners.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_preconditioners.c
 
 src/CMakeFiles/nl.dir/NL/nl_preconditioners.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_preconditioners.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_preconditioners.c > CMakeFiles/nl.dir/NL/nl_preconditioners.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_preconditioners.c > CMakeFiles/nl.dir/NL/nl_preconditioners.i
 
 src/CMakeFiles/nl.dir/NL/nl_preconditioners.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_preconditioners.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_preconditioners.c -o CMakeFiles/nl.dir/NL/nl_preconditioners.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_preconditioners.c -o CMakeFiles/nl.dir/NL/nl_preconditioners.s
 
 src/CMakeFiles/nl.dir/NL/nl_preconditioners.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_preconditioners.o.requires
@@ -237,18 +237,18 @@ src/CMakeFiles/nl.dir/NL/nl_preconditioners.o.provides: src/CMakeFiles/nl.dir/NL
 src/CMakeFiles/nl.dir/NL/nl_preconditioners.o.provides.build: src/CMakeFiles/nl.dir/NL/nl_preconditioners.o
 
 src/CMakeFiles/nl.dir/NL/nl_superlu.o: src/CMakeFiles/nl.dir/flags.make
-src/CMakeFiles/nl.dir/NL/nl_superlu.o: src/NL/nl_superlu.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_9)
+src/CMakeFiles/nl.dir/NL/nl_superlu.o: /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_superlu.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object src/CMakeFiles/nl.dir/NL/nl_superlu.o"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_superlu.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_superlu.c
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/nl.dir/NL/nl_superlu.o   -c /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_superlu.c
 
 src/CMakeFiles/nl.dir/NL/nl_superlu.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/nl.dir/NL/nl_superlu.i"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_superlu.c > CMakeFiles/nl.dir/NL/nl_superlu.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -E /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_superlu.c > CMakeFiles/nl.dir/NL/nl_superlu.i
 
 src/CMakeFiles/nl.dir/NL/nl_superlu.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/nl.dir/NL/nl_superlu.s"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_superlu.c -o CMakeFiles/nl.dir/NL/nl_superlu.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && /usr/bin/gcc  $(C_DEFINES) $(C_FLAGS) -S /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_superlu.c -o CMakeFiles/nl.dir/NL/nl_superlu.s
 
 src/CMakeFiles/nl.dir/NL/nl_superlu.o.requires:
 .PHONY : src/CMakeFiles/nl.dir/NL/nl_superlu.o.requires
@@ -286,8 +286,8 @@ binaries/lib/libnl.a: src/CMakeFiles/nl.dir/NL/nl_superlu.o
 binaries/lib/libnl.a: src/CMakeFiles/nl.dir/build.make
 binaries/lib/libnl.a: src/CMakeFiles/nl.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C static library ../binaries/lib/libnl.a"
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && $(CMAKE_COMMAND) -P CMakeFiles/nl.dir/cmake_clean_target.cmake
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nl.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && $(CMAKE_COMMAND) -P CMakeFiles/nl.dir/cmake_clean_target.cmake
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/nl.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/nl.dir/build: binaries/lib/libnl.a
@@ -305,10 +305,10 @@ src/CMakeFiles/nl.dir/requires: src/CMakeFiles/nl.dir/NL/nl_superlu.o.requires
 .PHONY : src/CMakeFiles/nl.dir/requires
 
 src/CMakeFiles/nl.dir/clean:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src && $(CMAKE_COMMAND) -P CMakeFiles/nl.dir/cmake_clean.cmake
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src && $(CMAKE_COMMAND) -P CMakeFiles/nl.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/nl.dir/clean
 
 src/CMakeFiles/nl.dir/depend:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/CMakeFiles/nl.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/src/CMakeFiles/nl.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/nl.dir/depend
 

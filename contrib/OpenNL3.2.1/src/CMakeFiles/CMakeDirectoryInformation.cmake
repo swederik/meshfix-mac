@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 SET(CMAKE_RELATIVE_PATH_TOP_SOURCE "/Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1")
-SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1")
+SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1")
 
 # Force unix paths in dependencies.
 SET(CMAKE_FORCE_UNIX_PATHS 1)

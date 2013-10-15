@@ -29,8 +29,8 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT)
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/lscm_NL/cmake_install.cmake")
-  INCLUDE("/Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/cmake_install.cmake")
+  INCLUDE("/Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/lscm_NL/cmake_install.cmake")
+  INCLUDE("/Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

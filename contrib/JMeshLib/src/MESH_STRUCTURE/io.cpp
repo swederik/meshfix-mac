@@ -990,11 +990,14 @@ void ply_readOverhead(FILE *in, int format, int oh)
 {
  int i;
  static char token[1024];
- if (format == PLY_FORMAT_ASCII)
+ if (format == PLY_FORMAT_ASCII){
      for (i=0; i<oh; i++)
          if(!fscanf(in, "%s", token))
              JMesh::error("fscanf %s:%d failed.", __FILE__, __LINE__);
- else for (i=0; i<oh; i++) fgetc(in);
+      }
+ else {
+  for (i=0; i<oh; i++) fgetc(in);
+}
 }
 
 

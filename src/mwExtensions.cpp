@@ -384,7 +384,7 @@ int ExtTriMesh::markTrianglesInsideComponent(short insideMarkBit, short componen
     List todo(c), cells, tmptl;
 
     // keep only triangles of the two components
-    while(t = (Triangle*) c->triangles.popHead())
+    while((t = (Triangle*) c->triangles.popHead()))
         if(t->mask & (1<<componentMarkBit1 | 1<<componentMarkBit2))
             tmptl.appendHead(t);
     c->triangles.joinTailList(&tmptl);
@@ -392,7 +392,7 @@ int ExtTriMesh::markTrianglesInsideComponent(short insideMarkBit, short componen
     int ncells = 0;
     int ret = 0;
     // get smallest cells containing at least both shells
-    while (c = (di_cell *)todo.popHead()) {
+    while ((c = (di_cell *)todo.popHead())) {
         if (ncells > 10*DI_MAX_NUMBER_OF_CELLS || c->triangles.numels() <= 100) cells.appendHead(c);
         else {
             JMesh::report_progress(NULL);
@@ -437,7 +437,7 @@ int ExtTriMesh::markTrianglesInsideComponent(short insideMarkBit, short componen
     //JMesh::info("markTrianglesInsideComponent: mask %d; componentMarkBit1 %d; componentMarkBit2 %d; insideMarkBit %d; outsideMarkBit %d; BBoxMarkBit %d; BBoxVisitBit %d; decidedMask %d\n",
     //           mask, componentMarkBit1,componentMarkBit2,insideMarkBit,outsideMarkBit,BBoxMarkBit, BBoxVisitBit, decidedMask);
 
-    while(c = (di_cell*) cells.popHead()) {
+    while((c = (di_cell*) cells.popHead())) {
         JMesh::report_progress("%d%%", (int)round(((double)(ncells - cells.numels()))/ncells*100));
         // get vertices of triangles of component1 in the cell
         Vertex *vt;
@@ -475,12 +475,12 @@ int ExtTriMesh::markTrianglesInsideComponent(short insideMarkBit, short componen
                 if(isInside != isInside2) continue; // skip in that case
                 // find an unselected triangle of having vertex v
                 List *l = v->VT();
-                while(t = (Triangle*) l->popHead()) if(!IS_VISITED(t)) { todo.appendHead(t); break; };
+                while((t = (Triangle*) l->popHead())) if(!IS_VISITED(t)) { todo.appendHead(t); break; };
                 delete(l);
                 if(!todo.numels()) continue; // no unselected triangle in neighborhood
                 // spread the decision to all connected triangles, stop at selected triangles (== intersections)
                 short markbit = isInside ? insideMarkBit : outsideMarkBit;
-                while(t = (Triangle*) todo.popHead()) {
+                while((t = (Triangle*) todo.popHead())) {
                     MARK_BIT(t, markbit);
                     MARK_BIT(t->v1(), markbit); MARK_BIT(t->v2(), markbit); MARK_BIT(t->v3(), markbit);
                     Triangle *t1 = t->t1(), *t2 = t->t2(), *t3 = t->t3();
@@ -613,7 +613,7 @@ int ExtTriMesh::moveTooCloseVerticesOutwards(double minAllowedDistance, short co
     Node *n, *m;
     List todo(c), cells, tmptl;
     // keep only triangles of the two components
-    while(t = (Triangle*) c->triangles.popHead())
+    while((t = (Triangle*) c->triangles.popHead()))
         if(t->mask & (1<<componentMarkBit1 | 1<<componentMarkBit2))
             tmptl.appendHead(t);
     c->triangles.joinTailList(&tmptl);
@@ -622,7 +622,7 @@ int ExtTriMesh::moveTooCloseVerticesOutwards(double minAllowedDistance, short co
     // cellsize = sqrt(d^2+d^2+d^2) = sqrt(3*d^3)
     double cellsize2 = 4*3*minAllowedDistance*minAllowedDistance;
     // get smallest cells containing at least both shells
-    while (c = (di_cell *)todo.popHead()) {
+    while ((c = (di_cell *)todo.popHead())) {
         JMesh::report_progress(NULL);
         if (ncells > DI_MAX_NUMBER_OF_CELLS || c->triangles.numels() <= 10 || (c->Mp-c->mp).squaredLength() < cellsize2 )
             cells.appendHead(c);
@@ -647,7 +647,7 @@ int ExtTriMesh::moveTooCloseVerticesOutwards(double minAllowedDistance, short co
         minDist2[v] = minAllowedDistance2;
         shift[v] = Point();
     }
-    while(c = (di_cell*) cells.popHead()) {
+    while((c = (di_cell*) cells.popHead())) {
         vertices.clear();
         JMesh::report_progress(NULL);
         FOREACHVTTRIANGLE((&c->triangles), t, n) if(IS_BIT(t, componentMarkBit1)) {
@@ -655,7 +655,7 @@ int ExtTriMesh::moveTooCloseVerticesOutwards(double minAllowedDistance, short co
             vertices.insert(t->v2());
             vertices.insert(t->v3());
         }
-        while(t = (Triangle*) c->triangles.popHead()) if(IS_BIT(t, componentMarkBit2)) {
+        while((t = (Triangle*) c->triangles.popHead())) if(IS_BIT(t, componentMarkBit2)) {
             for(std::set<Vertex *>::iterator i = vertices.begin(); i != vertices.end(); ++i) {
                 double dist2 = t->pointTriangleSquaredDistance(*i);
                 if (dist2 < minDist2[*i]) {

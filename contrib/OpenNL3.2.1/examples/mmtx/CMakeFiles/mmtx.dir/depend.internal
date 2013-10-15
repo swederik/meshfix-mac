@@ -8,6 +8,6 @@ examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o
  /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmio.h
  /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/mmtx.cpp
  /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/nb_coo.h
- src/NL/nl.h
- src/NL/nl_linkage.h
- src/NL/nl_private.h
+ /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl.h
+ /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_linkage.h
+ /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/src/NL/nl_private.h

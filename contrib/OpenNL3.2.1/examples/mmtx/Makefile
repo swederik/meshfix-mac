@@ -45,7 +45,7 @@ CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
 CMAKE_SOURCE_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
+CMAKE_BINARY_DIR = /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/mmtx/CMakeFiles/progress.marks
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 0
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/mmtx/CMakeFiles/progress.marks
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/clean
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,22 +88,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/preinstall
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/preinstall
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/mmtx/CMakeFiles/mmtx.dir/rule:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/CMakeFiles/mmtx.dir/rule
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/mmtx/CMakeFiles/mmtx.dir/rule
 .PHONY : examples/mmtx/CMakeFiles/mmtx.dir/rule
 
 # Convenience name for target.
@@ -112,37 +112,37 @@ mmtx: examples/mmtx/CMakeFiles/mmtx.dir/rule
 
 # fast build rule for target.
 mmtx/fast:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/build
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/build
 .PHONY : mmtx/fast
 
 # target to build an object file
 mmio.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmio.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmio.o
 .PHONY : mmio.o
 
 # target to preprocess a source file
 mmio.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmio.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmio.i
 .PHONY : mmio.i
 
 # target to generate assembly for a file
 mmio.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmio.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmio.s
 .PHONY : mmio.s
 
 # target to build an object file
 mmtx.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmtx.o
 .PHONY : mmtx.o
 
 # target to preprocess a source file
 mmtx.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmtx.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmtx.i
 .PHONY : mmtx.i
 
 # target to generate assembly for a file
 mmtx.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmtx.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/mmtx/CMakeFiles/mmtx.dir/build.make examples/mmtx/CMakeFiles/mmtx.dir/mmtx.s
 .PHONY : mmtx.s
 
 # Help Target
@@ -171,6 +171,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -45,7 +45,7 @@ CMAKE_EDIT_COMMAND = /opt/local/bin/ccmake
 CMAKE_SOURCE_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1
+CMAKE_BINARY_DIR = /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,14 +72,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/examples/lscm_NL/CMakeFiles/progress.marks
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1/CMakeFiles 0
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/examples/lscm_NL/CMakeFiles/progress.marks
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/clean
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/clean
 .PHONY : clean
 
 # The main clean target
@@ -88,22 +88,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/preinstall
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/preinstall
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/lscm_NL/CMakeFiles/parameterize.dir/rule:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/CMakeFiles/parameterize.dir/rule
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f CMakeFiles/Makefile2 examples/lscm_NL/CMakeFiles/parameterize.dir/rule
 .PHONY : examples/lscm_NL/CMakeFiles/parameterize.dir/rule
 
 # Convenience name for target.
@@ -112,22 +112,22 @@ parameterize: examples/lscm_NL/CMakeFiles/parameterize.dir/rule
 
 # fast build rule for target.
 parameterize/fast:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/build
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/build
 .PHONY : parameterize/fast
 
 # target to build an object file
 lscm_with_c_api.o:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/lscm_with_c_api.o
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/lscm_with_c_api.o
 .PHONY : lscm_with_c_api.o
 
 # target to preprocess a source file
 lscm_with_c_api.i:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/lscm_with_c_api.i
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/lscm_with_c_api.i
 .PHONY : lscm_with_c_api.i
 
 # target to generate assembly for a file
 lscm_with_c_api.s:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/lscm_with_c_api.s
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(MAKE) -f examples/lscm_NL/CMakeFiles/parameterize.dir/build.make examples/lscm_NL/CMakeFiles/parameterize.dir/lscm_with_c_api.s
 .PHONY : lscm_with_c_api.s
 
 # Help Target
@@ -153,6 +153,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/erik/Dropbox/MacCode/meshfix/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/erik/Dropbox/Code/forked/meshfix-mac/contrib/OpenNL3.2.1 && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

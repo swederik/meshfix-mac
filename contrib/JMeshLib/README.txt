@@ -1,5 +1,5 @@
 ----------------------------
-JMeshLib - Version 1.1                                                                
+JMeshLib - Version 1.2                                                                
 ----------------------------
 
 by Marco Attene
@@ -42,7 +42,7 @@ JMeshLib v1.0 has been extensively tested on 32 bit PCs running either:
  - ELF Linux with standard development tools (gcc/g++)
  - Windows OS with MSVC 8.0 (Visual C++ 2005)
 
-In version 1.1 it should compile and work properly on 64-bit Linux
+From version 1.1 it should compile and work properly on 64-bit Linux
 machines too. Uncomment the proper line in the 'makeconf' to create
 64-bit-enabled binaries.
 
@@ -77,7 +77,7 @@ Copyright
 
 JMeshLib is
 
-Copyright(C) 2006-2010: IMATI-GE / CNR                                         
+Copyright(C) 2006-2011: IMATI-GE / CNR                                         
                                                                           
 All rights reserved.                                                      
                                                                           

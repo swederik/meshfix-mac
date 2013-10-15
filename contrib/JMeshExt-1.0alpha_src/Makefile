@@ -1,7 +1,7 @@
 NL=../OpenNL3.2.1/
 NL_INC=-I${NL}/src/NL -I${NL}/src/
 
-JMESH=../JMeshLib-1.2/
+JMESH=../JMeshLib/
 JMESH_INC=-I${JMESH}/include/
 
 INC=${JMESH_INC} ${NL_INC} -I./include

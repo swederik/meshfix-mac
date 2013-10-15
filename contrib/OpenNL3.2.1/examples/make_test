@@ -43,7 +43,7 @@ function TEST_MODE() {
 }   
 
 function TEST_MMTX(){
-   local comma="../build/Darwin-Release/binaries/bin/mmtx"
+   local comma="../binaries/bin/mmtx"
    local data="$1"
    local if_float="$2" 
    local if_double="$3" 
@@ -67,7 +67,7 @@ function TEST_MMTX(){
 }
 
 function TEST_PARAMETRIZE(){
-   local comma="../build/Darwin-Release/binaries/bin/parameterize"
+   local comma="../binaries/bin/parameterize"
    local data="$1"
    local if_float="$2" 
    local if_double="$3" 
