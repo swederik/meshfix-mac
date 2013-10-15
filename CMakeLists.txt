@@ -26,12 +26,7 @@ set(meshfix_src
     src/uniform.cpp
     src/cleaning.cpp
 )
-add_custom_command(
-    TARGET meshfix
-    PRE_LINK
-    COMMAND make
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/contrib/JMeshLib/
-)
+
 if(CMAKE_CXX_SIZEOF_DATA_PTR EQUAL 8)
     ADD_DEFINITIONS(-DIS64BITPLATFORM)  ## needed for 64 bit 
 endif()
