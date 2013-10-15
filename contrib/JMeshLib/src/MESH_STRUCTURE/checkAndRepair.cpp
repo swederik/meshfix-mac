@@ -29,7 +29,7 @@
 #include "jqsort.h"
 #include <stdlib.h>
 #include <string.h>
-
+#include <map>
 
 ////////////// Performs some checks and attempts to fix possible errors or degeneracies //////////////
 
@@ -406,81 +406,42 @@ i++;
 }
 
 
-//// If the mesh is made of more than one connected component ////
-//// keep only the biggest one and remove all the others.     ////
+//// If the mesh is made of more than one connected component             ////
+//// keep only the number_to_keep biggest ones and remove all the others. ////
 
-int Triangulation::removeSmallestComponents()
-{
- Node *n,*m;
- List todo;
- List components;
- List *component, *biggest = NULL;
- Triangle *t, *t1, *t2, *t3;
- int nt = 0, gnt = 0;
-
- t = ((Triangle *)T.head()->data);
- n = T.head();
- do
- {
-  component = new List;
-  components.appendHead(component);
-  todo.appendHead(t);
-  while (todo.numels())
-  {
-   t = (Triangle *)todo.head()->data;
-   todo.removeCell(todo.head());
-   if (!IS_VISITED2(t))
-   {
-    t1 = t->t1();
-    t2 = t->t2();
-    t3 = t->t3();
-
-    if (t1 != NULL && !IS_VISITED2(t1)) todo.appendHead(t1);
-    if (t2 != NULL && !IS_VISITED2(t2)) todo.appendHead(t2);
-    if (t3 != NULL && !IS_VISITED2(t3)) todo.appendHead(t3);
-
-    MARK_VISIT2(t);
-    component->appendTail(t);
-   }
-  }
-  todo.removeNodes();
-  for (; n != NULL; n=n->next()) {t = ((Triangle *)n->data); if (!IS_VISITED2(t)) break;}
- }
- while (n != NULL);
-
- FOREACHNODE(components, n)
-  if ((nt = ((List *)n->data)->numels()) > gnt) {gnt=nt; biggest = (List *)n->data;}
-
- FOREACHTRIANGLE(t, n) UNMARK_VISIT2(t);
-
- nt = 0;
- FOREACHNODE(components, n)
-  if (((List *)n->data) != biggest)
-   FOREACHVTTRIANGLE(((List *)n->data), t, m)
-   {
-    if (t->e1->v1 != NULL) t->e1->v1->e0 = NULL;
-    if (t->e1->v2 != NULL) t->e1->v2->e0 = NULL;
-    if (t->e2->v1 != NULL) t->e2->v1->e0 = NULL;
-    if (t->e2->v2 != NULL) t->e2->v2->e0 = NULL;
-    if (t->e3->v1 != NULL) t->e3->v1->e0 = NULL;
-    if (t->e3->v2 != NULL) t->e3->v2->e0 = NULL;
-    t->e1->v1 = t->e1->v2 = t->e2->v1 = t->e2->v2 = t->e3->v1 = t->e3->v2 = NULL;
-    t->e1 = t->e2 = t->e3 = NULL;
-    nt++;
-   }
-
- FOREACHNODE(components, n) delete((List *)n->data);
-
- if (nt)
- {
-  d_boundaries = d_handles = d_shells = 1;
-  removeUnlinkedElements();
-  return 1;
- }
-
- return 0;
+int Triangulation::removeSmallestComponents( unsigned number_to_keep ) {
+    JMesh::begin_progress();
+    std::multimap<const unsigned, List*, std::greater<const unsigned> > sizeListMap;
+    // fill components list
+    List *components = getComponentsList();
+    int nt = 0, i = 0, deletion_counter = 0, nc = components->numels();
+    while(List *l = (List*) components->popHead())
+        sizeListMap.insert(std::pair<const unsigned, List*>(l->numels(), l));
+    std::map<const unsigned, List*>::iterator it = sizeListMap.begin();
+    for(; it != sizeListMap.end(); it++) {
+        JMesh::report_progress("%d%%", (i*100)/nc);
+        List *l = it->second;
+        // skip number_to_keep first elements (since they have biggest number of elements)
+        if( i++ >= number_to_keep ) {
+            deletion_counter++;
+            while(Triangle *t = (Triangle*) l->popHead()) {
+                t->unlinkEdgesWithVertices();
+                nt++;
+            }
+        }
+        l->removeNodes();
+    }
+    JMesh::report_progress("");
+    JMesh::end_progress(false);
+    // if there are components that were unlinked
+    if (nt) {
+        d_boundaries = d_handles = d_shells = 1;
+        removeUnlinkedElements();
+        JMesh::info("Removed the smallest %d of %d shells\n", deletion_counter, nc);
+        return nt;
+    }
+    return 0;
 }
-
 
 //// Traverses the triangulation and inverts normals in order ////
 //// to make the adjacences consistent.			      ////
@@ -595,12 +556,12 @@ int Triangulation::removeOverlappingTriangles()
  for (n=oved.tail(); n!=NULL; n=n->prev())
  {
   e = (Edge *)n->data;
-  if (!e->isOnBoundary() && e->t1->getDAngle(e->t2) == M_PI) {unlinkTriangle(e->t1); unlinkTriangle(e->t2);}
+  if (!e->isOnBoundary() && e->t1->getDAngle(e->t2) == M_PI) {
+   unlinkTriangle(e->t1); 
+   unlinkTriangle(e->t2);
+  }
  }
- removeUnlinkedElements();
- d_boundaries = d_handles = d_shells = 1;
-
- return 0;
+ return removeUnlinkedElements(); // >0 if something was removed
 }
 
 

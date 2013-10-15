@@ -207,22 +207,24 @@ int Vertex::valence() const
 
 /////////////// Checks the boundary ////////////////////////////
 
-int Vertex::isOnBoundary() const
+int Vertex::isOnBoundary(short markbit) const
 {
  Triangle *t;
  Edge *e;
  Vertex *v;
 
  if (e0 == NULL) return 0;
-
  e = e0;
+ char found = 0;
  do
  {
   v = e->oppositeVertex(this);
   t = e->leftTriangle(this);
   if (t == NULL) return 1;
+  if (markbit >= 0) found |= IS_BIT(t,markbit) ? 1 : 2;
   e = t->oppositeEdge(v);
  } while (e != e0);
+ if (markbit >= 0 && found == 3) return 1; // we found at least one unmarked and one marked triangle
 
  return 0;
 }
@@ -230,7 +232,7 @@ int Vertex::isOnBoundary() const
 
 /////////////// Next boundary edge ////////////////////////////
 
-Edge *Vertex::nextBoundaryEdge() const
+Edge *Vertex::nextBoundaryEdge(short markbit) const
 {
  Triangle *t;
  Edge *e;
@@ -244,6 +246,7 @@ Edge *Vertex::nextBoundaryEdge() const
   v = e->oppositeVertex(this);
   t = e->leftTriangle(this);
   if (t == NULL) return e;
+  if (markbit >= 0 && IS_BIT(e->rightTriangle(this),markbit) && !IS_BIT(t,markbit)) return e;
   e = t->oppositeEdge(v);
  } while (e != e0);
 
@@ -253,9 +256,9 @@ Edge *Vertex::nextBoundaryEdge() const
 
 /////////////// Next boundary vertex ////////////////////////////
 
-Vertex *Vertex::nextOnBoundary() const
+Vertex *Vertex::nextOnBoundary(short markbit) const
 {
- Edge *e = nextBoundaryEdge();
+ Edge *e = nextBoundaryEdge(markbit);
  if (e != NULL) return e->oppositeVertex(this);
 
  return NULL;
@@ -264,7 +267,7 @@ Vertex *Vertex::nextOnBoundary() const
 
 /////////////// Previous boundary edge ////////////////////////////
 
-Edge *Vertex::prevBoundaryEdge() const
+Edge *Vertex::prevBoundaryEdge(short markbit) const
 {
  Triangle *t;
  Edge *e;
@@ -278,6 +281,7 @@ Edge *Vertex::prevBoundaryEdge() const
   v = e->oppositeVertex(this);
   t = e->rightTriangle(this);
   if (t == NULL) return e;
+  if (markbit >= 0 && IS_BIT(e->leftTriangle(this),markbit) && !IS_BIT(t,markbit)) return e;
   e = t->oppositeEdge(v);
  } while (e != e0);
 
@@ -287,9 +291,9 @@ Edge *Vertex::prevBoundaryEdge() const
 
 /////////////// Previous boundary vertex ////////////////////////////
 
-Vertex *Vertex::prevOnBoundary() const
+Vertex *Vertex::prevOnBoundary(short markbit) const
 {
- Edge *e = prevBoundaryEdge();
+ Edge *e = prevBoundaryEdge(markbit);
  if (e != NULL) return e->oppositeVertex(this);
 
  return NULL;

@@ -1,6 +1,7 @@
 #include "exttrimesh.h"
 #include <string.h>
 #include <stdlib.h>
+#include <jrs_predicates.h>
 
 const char *input_filename;
 

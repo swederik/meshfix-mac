@@ -111,9 +111,10 @@ class List
 
  //! Appends a list 'l' to the head by duplicating nodes in 'l'. \n O(l->numels()).
  void appendList(const List *l);
-
  //! Appends a list 'l' to the tail by linking the first node of 'l' to the last one of this list. 'l' becomes empty. \n O(1).
  void joinTailList(List *l);
+ //! Appends a list 'l' to the head by linking the last node of 'l' to the first one of this list. 'l' becomes empty. \n O(1).
+ void joinHeadList(List *l);
 
  void *popHead();		//!< Deletes and removes the first node. Returns its data. \n O(1).
  void *popTail();		//!< Deletes and removes the last node. Returns its data. \n O(1).

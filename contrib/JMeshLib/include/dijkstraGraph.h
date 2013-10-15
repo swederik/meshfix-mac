@@ -99,14 +99,8 @@ class dijkstraGraph : public Graph
  dijkstraEdge *createEdge(dijkstraNode *n1, dijkstraNode *n2, double c);
  
  dijkstraNode *popFirstNode() {return ch->popHead();}
- dijkstraNode **getNodes() const {return nds;}
- int getNumNodes() const {return curNodeIndex;}
 
- // If 'use_distances' is set to true, current distances associated to the nodes
- // are not set to infinity before running the algorithm.
- void runDijkstra(dijkstraNode *s, bool use_distances = false);
-
- double computeDistance(dijkstraNode *source, dijkstraNode *destination);
+ void runDijkstra(dijkstraNode *s);
 };
 
 #endif // _DIJKSTRA_GRAPH_H

@@ -250,6 +250,7 @@ double Point::getAngle(const Point& p) const
 
 //// Side: returns 1 if right, -1 if left, 0 aligned         ////
 //// respect to the plane whose directional vector is "this" ////
+//// In other words: 1 if (p2-p1) cross (p3-p1) dot this > 0.////
 
 int Point::side3D(const Point *p1, const Point *p2, const Point *p3) const
 {

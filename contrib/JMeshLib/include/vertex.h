@@ -92,36 +92,43 @@ class Vertex : public Point
  //! Returns the edge connecting this vertex to 'v'. NULL if such an edge does not exist.
  class Edge *getEdge(const Vertex *v) const;
  int valence() const;				//!< Returns the number of incident edges
- int isOnBoundary() const;			//!< TRUE iff vertex is on boundary
+ //! TRUE if vertex is on boundary
+ //! For markbit >=0 boundary means boundary of the selection with this bit.
+ int isOnBoundary(short markbit = -1) const;
  
  //! Returns the edge following this vertex on the boundary.
  
  //! This edge is the counterclockwise-most incident edge.
  //! Returns NULL if this vertex is not on the boundary.
- Edge *nextBoundaryEdge() const;
+ //! For markbit >=0 boundary means boundary of the selection with this bit.
+ Edge *nextBoundaryEdge(short markbit = -1) const;
 
  //! Returns the edge preceeding this vertex on the boundary.
  
  //! This edge is the clockwise-most incident edge.
  //! Returns NULL if this vertex is not on the boundary.
- Edge *prevBoundaryEdge() const;
+ //! For markbit >=0 boundary means boundary of the selection with this bit.
+ Edge *prevBoundaryEdge(short markbit = -1) const;
 
  //! Returns the vertex following this one on the boundary.
  
  //! If the vertex is on the boundary, this is equivalent to nextBoundaryEdge()->oppositeVertex(v)
  //! otherwise returns NULL.
- Vertex *nextOnBoundary() const;
+ //! For markbit >=0 boundary means boundary of the selection with this bit.
+ Vertex *nextOnBoundary(short markbit = -1) const;
 
  //! Returns the vertex preceeding this one on the boundary.
  
  //! If the vertex is on the boundary, this is equivalent to prevBoundaryEdge()->oppositeVertex(v)
  //! otherwise returns NULL.
- Vertex *prevOnBoundary() const;
+ //! For markbit >=0 boundary means boundary of the selection with this bit.
+ Vertex *prevOnBoundary(short markbit = -1) const;
 
  //! Normal at the vertex computed as the sum of incident triangle normals weighted on their incidence angle.
  Point getNormal() const;
 
  //! Returns  the angle between the two incident boundary edges. If the vertex is not on the boundary, returns -1.
+ //! For markbit >=0 boundary means boundary of the selection with this bit.
  double getBoundaryAngle() const;
  
  //! Discriminant Angle for triangulating 3D polygons.

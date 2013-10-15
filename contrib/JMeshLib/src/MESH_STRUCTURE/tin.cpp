@@ -136,7 +136,6 @@ Triangulation::Triangulation(const Triangulation *tin, const bool clone_info)
 //// Creates a new Triangulation out of a connected component of an existing Triangulation.
 //// If 'keep_reference' is set to 'true', each element of the existing mesh keeps a
 //// pointer to the corresponding new element in the 'info' field.
-
 Triangulation::Triangulation(const Triangle *t0, const bool keep_reference)
 {
  List todo(t0), st, sv, se;
@@ -149,6 +148,7 @@ Triangulation::Triangulation(const Triangle *t0, const bool keep_reference)
  {
   t = (Triangle *)todo.popHead();
   st.appendHead(t);
+  MARK_VISIT2(t);
   nt=t->t1(); if (nt != NULL && !IS_VISITED2(nt)) {MARK_VISIT2(nt); todo.appendHead(nt);}
   nt=t->t2(); if (nt != NULL && !IS_VISITED2(nt)) {MARK_VISIT2(nt); todo.appendHead(nt);}
   nt=t->t3(); if (nt != NULL && !IS_VISITED2(nt)) {MARK_VISIT2(nt); todo.appendHead(nt);}
@@ -166,7 +166,7 @@ Triangulation::Triangulation(const Triangle *t0, const bool keep_reference)
  }
 
  FOREACHVVVERTEX((&sv), v, n)
-  {UNMARK_VISIT2(v); nv=new Vertex(v); V.appendTail(nv); v->info = nv;}
+ {UNMARK_VISIT2(v); nv=new Vertex(v); V.appendTail(nv); if (v->info != NULL) {nv->info = v->info;}; v->info = nv;} // modification A.T.: copy info pointer to nv
 
  FOREACHVEEDGE((&se), e, n)
   {UNMARK_VISIT2(e); ne=new Edge((Vertex *)e->v1->info, (Vertex *)e->v2->info); E.appendTail(ne); e->info = ne;}
@@ -409,7 +409,7 @@ int Triangulation::removeTriangles()
  int r = 0;
 
  n = T.head();
- do
+ while(n != NULL)
  {
   t = (Triangle *)n->data;
   n = n->next();
@@ -419,7 +419,7 @@ int Triangulation::removeTriangles()
    T.removeCell((n!=NULL)?(n->prev()):T.tail());
    delete t;
   }
- } while (n != NULL);
+ }
 
  d_boundaries = d_handles = d_shells = 1;
 
@@ -436,7 +436,7 @@ int Triangulation::removeEdges()
  int r = 0;
 
  n = E.head();
- do
+ while (n != NULL)
  {
   e = (Edge *)n->data;
   n = n->next();
@@ -446,7 +446,7 @@ int Triangulation::removeEdges()
    E.removeCell((n!=NULL)?(n->prev()):E.tail());
    delete e;
   }
- } while (n != NULL);
+ }
 
  d_boundaries = d_handles = d_shells = 1;
 
@@ -463,7 +463,7 @@ int Triangulation::removeVertices()
  int r = 0;
 
  n = V.head();
- do
+ while (n != NULL)
  {
   v = (Vertex *)n->data;
   n = n->next();
@@ -473,7 +473,7 @@ int Triangulation::removeVertices()
    V.removeCell((n!=NULL)?(n->prev()):V.tail());
    delete v;
   }
- } while (n != NULL);
+ }
 
  d_boundaries = d_handles = d_shells = 1;
 
@@ -489,13 +489,22 @@ int Triangulation::removeVertices()
 //////////////////////////////////////////////////////////////////
 
 
-//////////////// Deselect all the triangles /////////////
+//////////////// Select all the triangles /////////////
 
-void Triangulation::deselectTriangles()
+void Triangulation::selectAllTriangles(short markBit)
 {
  Triangle *t;
  Node *n;
- FOREACHTRIANGLE(t, n) UNMARK_VISIT(t);
+ FOREACHTRIANGLE(t, n) MARK_BIT(t, markBit);
+}
+
+//////////////// Deselect all the triangles /////////////
+
+void Triangulation::deselectTriangles(short markBit)
+{
+ Triangle *t;
+ Node *n;
+ FOREACHTRIANGLE(t, n) UNMARK_BIT(t, markBit);
 }
 
 
@@ -613,24 +622,25 @@ void Triangulation::invertSelection(Triangle *t0)
 }
 
 
-void Triangulation::reselectSelection(Triangle *t0)
+void Triangulation::reselectSelection(Triangle *t0, char selectBit, bool deselectOthers)
 {
  if (!IS_VISITED(t0)) return;
 
  Node *n;
  Triangle *t, *s;
  List triList(t0);
- MARK_VISIT2(t0);
+ char tmpBit = selectBit == 1 ? 2 : 1;
+ MARK_BIT(t0,tmpBit);
 
  while(triList.numels())
  {
   t = (Triangle *)triList.popHead();
-  if ((s = t->t1()) != NULL && !IS_VISITED2(s) && IS_VISITED(s)) {triList.appendHead(s); MARK_VISIT2(s);}
-  if ((s = t->t2()) != NULL && !IS_VISITED2(s) && IS_VISITED(s)) {triList.appendHead(s); MARK_VISIT2(s);}
-  if ((s = t->t3()) != NULL && !IS_VISITED2(s) && IS_VISITED(s)) {triList.appendHead(s); MARK_VISIT2(s);}
+  if ((s = t->t1()) != NULL && !IS_BIT(s,tmpBit) && IS_VISITED(s)) {triList.appendHead(s); MARK_BIT(s,tmpBit);}
+  if ((s = t->t2()) != NULL && !IS_BIT(s,tmpBit) && IS_VISITED(s)) {triList.appendHead(s); MARK_BIT(s,tmpBit);}
+  if ((s = t->t3()) != NULL && !IS_BIT(s,tmpBit) && IS_VISITED(s)) {triList.appendHead(s); MARK_BIT(s,tmpBit);}
  }
 
- FOREACHTRIANGLE(t, n) if (!IS_VISITED2(t)) UNMARK_VISIT(t); else UNMARK_VISIT2(t);
+ FOREACHTRIANGLE(t, n) if (IS_BIT(t,tmpBit)) MARK_BIT(t, selectBit); else if(deselectOthers) UNMARK_VISIT(t);
 }
 
 // Creates a new mesh out of a selection.
@@ -954,6 +964,78 @@ void Triangulation::append(Triangulation *src)
  d_boundaries = d_handles = d_shells = 1;
 }
 
+void Triangulation::joinTailTriangulation(Triangulation *src) {
+    V.joinTailList(&src->V);
+    E.joinTailList(&src->E);
+    T.joinTailList(&src->T);
+    d_boundaries = d_handles = d_shells = 1;
+}
+
+void Triangulation::joinHeadTriangulation(Triangulation *src) {
+    src->joinTailTriangulation(this);
+    this->joinTailTriangulation(src);
+}
+
+Triangulation *Triangulation::extractShell(Triangle *t, const bool copy_mask) {
+
+    Node *n, *nin;
+    Vertex *v,*vin;
+    Edge *e, *ein;
+    Triangle *thlp,*thlpin;
+    Triangulation *tin;
+    int i;
+
+    // modification A.T.: mask byte is copied if desired
+    if(copy_mask) {
+
+        // copy mask bits (V,E,T) into arrays
+        char *v_mask = new char [V.numels()];
+        i=0; FOREACHVERTEX(v, n) { v_mask[i++] = v->mask; v->mask = 0; };
+        char *e_mask = new char [E.numels()];
+        i=0; FOREACHEDGE(e, n) { e_mask[i++] = e->mask; e->mask = 0; };
+        char *t_mask = new char [T.numels()];
+        i=0; FOREACHTRIANGLE(thlp, n) { t_mask[i++] = thlp->mask; thlp->mask = 0; };
+
+        // copy v->info pointers into array and set all v->info pointers to NULL
+        void **v_info = new void *[V.numels()];
+        i=0; FOREACHVERTEX(v, n){ v_info[i++]=v->info; v->info = NULL;};
+
+        tin = new Triangulation((Triangle*) t,1);
+
+        // the info->pointers in the original triangulation are now NULL or point
+        // to corresponding new vertics, triangles and edges in tin:
+        // so loop over original V,E,T, and whenever info is not NULL, copy mask bit
+        // from array to tin (for V, also copy info pointers to keep numbering)
+        i=0; FOREACHTRIANGLE(thlp, n) { if(thlp->info) { thlpin = (Triangle *)thlp->info; thlpin->mask = t_mask[i]; }; i++; }
+        i=0; FOREACHVERTEX(v, n) { if(v->info) { vin = (Vertex *)v->info; vin->mask = v_mask[i]; vin->info = v_info[i]; }; i++; }
+        i=0; FOREACHEDGE(e, n) { if(e->info) { ein = (Edge *)e->info; ein->mask = e_mask[i]; }; i++; }
+
+        // copy v->info pointers back from array to original triangulation
+        i=0; FOREACHVERTEX(v, n) v->info = v_info[i++];
+
+        // copy back mask bits from arrays to original triangulation
+       i=0; FOREACHVERTEX(v, n) v->mask = v_mask[i++];
+       i=0; FOREACHEDGE(e, n) e->mask = e_mask[i++];
+
+       // copy back masks only for triangles that will not be removed below; otherwise this->removeShell(t) is "confused"
+       i=0; FOREACHTRIANGLE(thlp, n) { if(!thlp->info) { thlp->mask = t_mask[i]; }; i++; };
+
+        // clean up memory
+        delete [] v_mask; delete [] e_mask; delete [] t_mask; delete [] v_info;
+    }
+    else tin = new Triangulation((Triangle*) t);
+
+    this->removeShell(t);
+    // removeShell apparently does not change the mask bits of the triangles that are not removed !?
+    // so this should be OK; but mask bit 2 of triangles that are removed have to be set to 0 before!
+
+    return tin;
+}
+
+Triangulation *Triangulation::extractFirstShell(const bool copy_mask) {
+    return this->extractShell((Triangle*)T.head()->data,copy_mask);
+}
+
 //////////////////////////////////////////////////////////////////
 //                                                              //
 //    R E G I O N   M A N I P U L A T I O N                     //
@@ -1157,6 +1239,39 @@ void Triangulation::removeShell(Triangle *t0)
  }
 
  removeUnlinkedElements();
+}
+
+List* Triangulation::getComponentsList() {
+    List todo;
+    List *component, *components = new List();
+    Triangle *t, *t1, *t2, *t3;
+    Node *n;
+    // unmark all triangles
+    FOREACHTRIANGLE(t, n) if(t != NULL) UNMARK_VISIT2(t);
+    // fill components list
+    FOREACHTRIANGLE(t, n) {
+        if(!IS_VISITED2(t)) {
+            component = new List;
+            components->appendHead(component);
+            todo.appendHead(t);
+            while (t = (Triangle*) todo.popHead()) {
+                if (!IS_VISITED2(t)) {
+                    t1 = t->t1();
+                    t2 = t->t2();
+                    t3 = t->t3();
+                    // append neighbor triangles to todo list
+                    if (t1 && !IS_VISITED2(t1)) todo.appendHead(t1);
+                    if (t2 && !IS_VISITED2(t2)) todo.appendHead(t2);
+                    if (t3 && !IS_VISITED2(t3)) todo.appendHead(t3);
+                    MARK_VISIT2(t);
+                    component->appendTail(t);
+                }
+            }
+        }
+    }
+    // unmark all triangles
+    FOREACHTRIANGLE(t, n) UNMARK_VISIT2(t);
+    return components;
 }
 
 

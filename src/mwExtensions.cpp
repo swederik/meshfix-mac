@@ -118,12 +118,12 @@ int ExtTriMesh::joinComponentsBiggestBoundaryPair(List *nl, List *ml, double joi
     List *loop, *biggestLoop1 = NULL, *biggestLoop2 = NULL;
     // get the pair of the biggest boundary loops
     List *tmp = new List();
-    while (loop = (List*) cn.boundaries->popHead()) {
+    while ((loop = (List*) cn.boundaries->popHead())) {
         if(biggestLoop1 && loop->numels() <= biggestLoop1->numels()) tmp->appendHead(loop);
         else biggestLoop1 = loop;
     }
     cn.boundaries->joinTailList(tmp);
-    while (loop = (List*) cm.boundaries->popHead()) {
+    while ((loop = (List*) cm.boundaries->popHead())) {
         if(biggestLoop2 && loop->numels() <= biggestLoop2->numels()) tmp->appendHead(loop);
         else biggestLoop2 = loop;
     }
@@ -216,7 +216,7 @@ int ExtTriMesh::moveVerticesInwards(Point &componentCenter, std::map<Vertex *, P
     int i = 0;
     int ret = 0;
     double stepsize2 = stepsize*stepsize;
-    while (c = (di_cell *)todo.popHead()) {
+    while ((c = (di_cell *)todo.popHead())) {
         if (i > DI_MAX_NUMBER_OF_CELLS || c->triangles.numels() <= 10 || (c->Mp-c->mp).length() < distance) cells.appendHead(c);
         else {
             i++;
@@ -231,7 +231,7 @@ int ExtTriMesh::moveVerticesInwards(Point &componentCenter, std::map<Vertex *, P
     Triangle *t, *t2;
     Vertex *v1, *v2;
     double distance2 = distance*distance;
-    while (c = (di_cell *)cells.popHead()) {
+    while ((c = (di_cell *)cells.popHead())) {
         std::set<Vertex*> vertices;
         FOREACHVTTRIANGLE((&c->triangles), t, n) { vertices.insert(t->v1()); vertices.insert(t->v2()); vertices.insert(t->v3()); }
         for(std::set<Vertex*>::const_iterator itv1 = vertices.begin(); itv1 != vertices.end(); ++itv1) {

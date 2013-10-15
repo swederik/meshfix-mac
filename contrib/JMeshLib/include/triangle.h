@@ -197,6 +197,9 @@ class Triangle
 
  //! Print the coordinates of the three vertices to the file handler pointed to by 'f' (stdout by default).
  void printTriangle(FILE *f =stdout) const;
+
+ //! Unlink all edges and vertices of the triangle
+ void unlinkEdgesWithVertices();
 };
 
 #endif // _TRIANGLE_H

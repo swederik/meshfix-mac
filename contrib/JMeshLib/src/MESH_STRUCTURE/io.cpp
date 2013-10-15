@@ -82,8 +82,7 @@ inline void PRINT_PLY_COMMENT(FILE *f)
 }
 
 /// Returns TRUE if the two strings are equal in a case-insensitive sense /////
-
-inline bool sameString(char *a, char *b)
+inline bool sameString(const char *a, const char *b)
 {
  int i=0;
  while (a[i] != '\0' && b[i] != '\0')
@@ -94,7 +93,6 @@ inline bool sameString(char *a, char *b)
 
 
 // Swap endian-ness for four-byte elements
-
 inline void endian_swap_long(unsigned char *p)
 {
  unsigned char b0,b1,b2,b3;
@@ -104,8 +102,56 @@ inline void endian_swap_long(unsigned char *p)
 }
 
 
-// Read one line (max 1024 chars) and exit if EOF
+// Swap endian-ness (general function)
+inline void *SwapEndian(void* Addr, const int Nb) {
+        static char Swapped[16];
+        switch (Nb) {
+                case 2:	Swapped[0]=*((char*)Addr+1);
+                                Swapped[1]=*((char*)Addr  );
+                                break;
+                case 3:	// As far as I know, 3 is used only with RGB images
+                                Swapped[0]=*((char*)Addr+2);
+                                Swapped[1]=*((char*)Addr+1);
+                                Swapped[2]=*((char*)Addr  );
+                                break;
+                case 4:	Swapped[0]=*((char*)Addr+3);
+                                Swapped[1]=*((char*)Addr+2);
+                                Swapped[2]=*((char*)Addr+1);
+                                Swapped[3]=*((char*)Addr  );
+                                break;
+                case 8:	Swapped[0]=*((char*)Addr+7);
+                                Swapped[1]=*((char*)Addr+6);
+                                Swapped[2]=*((char*)Addr+5);
+                                Swapped[3]=*((char*)Addr+4);
+                                Swapped[4]=*((char*)Addr+3);
+                                Swapped[5]=*((char*)Addr+2);
+                                Swapped[6]=*((char*)Addr+1);
+                                Swapped[7]=*((char*)Addr  );
+                                break;
+                case 16:Swapped[0]=*((char*)Addr+15);
+                                Swapped[1]=*((char*)Addr+14);
+                                Swapped[2]=*((char*)Addr+13);
+                                Swapped[3]=*((char*)Addr+12);
+                                Swapped[4]=*((char*)Addr+11);
+                                Swapped[5]=*((char*)Addr+10);
+                                Swapped[6]=*((char*)Addr+9);
+                                Swapped[7]=*((char*)Addr+8);
+                                Swapped[8]=*((char*)Addr+7);
+                                Swapped[9]=*((char*)Addr+6);
+                                Swapped[10]=*((char*)Addr+5);
+                                Swapped[11]=*((char*)Addr+4);
+                                Swapped[12]=*((char*)Addr+3);
+                                Swapped[13]=*((char*)Addr+2);
+                                Swapped[14]=*((char*)Addr+1);
+                                Swapped[15]=*((char*)Addr  );
+                                break;
+        }
+        return (void*)Swapped;
+}
 
+
+
+// Read one line (max 1024 chars) and exit if EOF
 char *readLineFromFile(FILE *in, bool exit_on_eof = 1)
 {
 #define MAX_READLINE_CHARS	1024
@@ -132,13 +178,15 @@ char *readLineFromFile(FILE *in, bool exit_on_eof = 1)
 // Looks for a keyword 'kw' in an ASCII file referenced through 'fp'.
 // The file pointer is set to the byte right after the first keyword matched.
 // Return 1 on success (keyword match), 0 otherwise.
-
-
 bool seek_keyword(FILE *fp, const char *kw)
 {
  static char s[256];
  s[0]='\0';
- do fscanf(fp,"%255s",s); while (strcmp(s,kw) && !feof(fp));
+ do
+ {
+  if (!fscanf(fp,"%255s",s))
+      JMesh::error("fscanf %s:%d failed.", __FILE__, __LINE__);
+ } while (strcmp(s,kw) && !feof(fp));
  if (feof(fp)) return 0;
  return 1;
 }
@@ -391,7 +439,7 @@ int Triangulation::loadOFF(const char *fname)
 
  if ((fp = fopen(fname,"rb")) == NULL) return IO_CANTOPEN;
 
- fscanf(fp,"%255s",s);
+ if(!fscanf(fp,"%255s",s)) JMesh::error("fscanf %s:%d failed.", __FILE__, __LINE__);
  if (strcmp(s,"OFF") || feof(fp)) return IO_FORMAT;
  do {line = readLineFromFile(fp);} while (line[0] == '#' || line[0] == '\0' || !sscanf(line,"%256s",s));
  if (sscanf(line,"%d %d %d",&nv,&nt,&ne) < 3) return IO_FORMAT;
@@ -942,7 +990,10 @@ void ply_readOverhead(FILE *in, int format, int oh)
 {
  int i;
  static char token[1024];
- if (format == PLY_FORMAT_ASCII) for (i=0; i<oh; i++) fscanf(in, "%s", token);
+ if (format == PLY_FORMAT_ASCII)
+     for (i=0; i<oh; i++)
+         if(!fscanf(in, "%s", token))
+             JMesh::error("fscanf %s:%d failed.", __FILE__, __LINE__);
  else for (i=0; i<oh; i++) fgetc(in);
 }
 
@@ -982,11 +1033,17 @@ int ply_readFIndices(FILE *in, int format, int ph, int *nv, int *x, int *y, int 
 
  ply_readOverhead(in, format, ph);
 
- if (format == PLY_FORMAT_ASCII) {fscanf(in,"%d %d %d %d", nv, x, y, z); return 1;}
+ if (format == PLY_FORMAT_ASCII)
+ {
+  if( !fscanf(in,"%d %d %d %d", nv, x, y, z) )
+   JMesh::error("fscanf %s:%d failed.", __FILE__, __LINE__);
+  return 1;
+ }
 
- fread(&nvs, 1, 1, in);
+ if( !fread(&nvs, 1, 1, in) ) JMesh::error("fread %s:%d failed.", __FILE__, __LINE__);
+
  *nv = (int)nvs;
- fread(vc, 4, 3, in);
+ if( !fread(vc, 4, 3, in) ) JMesh::error("fread %s:%d failed.", __FILE__, __LINE__);
  *x = vc[0]; *y = vc[1]; *z = vc[2];
 
  if (format == PLY_FORMAT_BIN_B)
@@ -1267,15 +1324,17 @@ int Triangulation::loadSTL(const char *fname)
 
  if ((fp = fopen(fname,"r")) == NULL) return IO_CANTOPEN;
 
- fscanf(fp,"%5s",kw);
+ if (!fscanf(fp,"%5s",kw)) JMesh::error("fscanf %s:%d failed.", __FILE__, __LINE__);
+
  if (strcmp(kw,"solid")) binary=1;
 
  JMesh::begin_progress();
 
  if (binary)
  {
-  fseek(fp, 80, SEEK_SET);
-  fread(&nt, 4, 1, fp);
+  if( !fseek(fp, 80, SEEK_SET) ) JMesh::error("fseek %s:%d failed.", __FILE__, __LINE__);
+
+  if( !fread(&nt, 4, 1, fp) ) JMesh::error("fread %s:%d failed.", __FILE__, __LINE__);
   for (i=0; i<nt; i++)
   {
    if ((i)%10000 == 0) JMesh::report_progress(NULL);
@@ -1370,4 +1429,249 @@ int Triangulation::saveSTL(const char *fname)
  fclose(fp);
 
  return 0;
+}
+
+////////////////////// Saves MSH format (gmsh) ///////////////////////////
+// saveMSH keeps masks and normals unchanged
+// and can be used anytime to write out intermediate results for debugging
+// (e.g. this->saveMSH("test.msh") will write out the maskByte)
+// when an additional maskByte is defined, then separate element data sets
+// are saved for each set bit (easier for visual inspection of specific mask bits)
+// (e.g. this->saveMSH("test.msh",3) will save separate data sets for mask bits 0 and 1)
+// additionally, the normals can be saved
+// (e.g. this->saveMSH("test.msh",0,1)
+int Triangulation::saveMSH(const char *fname, char maskByte, bool save_normals)
+{
+ FILE *fp;
+ char triname[256], mask;
+ int i = 0,j = 0, k = 0, nShells;
+ Node *n, *norg;
+ Vertex *v, *vorg;
+ Triangle *t, *torg;
+ Edge *e, *eorg;
+ Point Normal;
+ Triangulation *shellPtr, *shellPtr2; // temporary triangulations
+
+ void *info;
+ int *hlpPtr, *hlpPtr2, *hlpPtr3;
+
+ strcpy(triname,fname);
+
+ if ((fp = fopen(triname,"w")) == NULL)
+ {
+  JMesh::warning("Can't open '%s' for output !\n",triname);
+  return 1;
+ }
+
+ JMesh::info("Writing %s ...\n",triname);
+ k=0; FOREACHTRIANGLE(t, n) { if(t->mask){ k++; }; }
+ JMesh::info("N non-zero masks %d\n",k);
+
+
+ // writing vertices
+ fprintf(fp,"$MeshFormat\n2.0 0 8\n$EndMeshFormat\n$Nodes\n%d\n",V.numels());
+ FOREACHVERTEX(v, n)
+ {
+  i++;
+  fprintf(fp,"%d %f %f %f\n",i,v->x,v->y,v->z);
+  v->info = (int *) malloc(sizeof(int));
+  hlpPtr = (int *) v->info; // give vertex unique number; needed for triangle definition in msh format (see below)
+  *hlpPtr = i;
+ }
+ fprintf(fp,"$EndNodes\n$Elements\n%d\n",T.numels());
+
+ JMesh::info("OrgShell: %d vertices and %d faces.\n",V.numels(),T.numels());
+
+
+ // writing triangles (separately for each shell):
+ // copy the complete shell, as extractFirstShell successively removes the pointers to the info fields otherwise
+ shellPtr = new Triangulation(this,1);
+ nShells = shellPtr->shells();
+
+ i = 0;
+ for(j=0; j<nShells; j++)
+ {
+    shellPtr2 = (Triangulation*) shellPtr->extractFirstShell(1);
+    JMesh::info("extractedShell: %d vertices and %d faces.\n",shellPtr2->V.numels(),shellPtr2->T.numels());
+
+    FOREACHVTTRIANGLE((&(shellPtr2->T)), t, n)
+     {
+        i++;
+        hlpPtr  = (int*) t->v1()->info;
+        hlpPtr2 = (int*) t->v2()->info;
+        hlpPtr3 = (int*) t->v3()->info;
+        fprintf(fp,"%d 2 2 %d %d %d %d %d\n",i, j+1, j+1, *hlpPtr, *hlpPtr2, *hlpPtr3);
+     }
+ }
+
+
+ // writing vertex normals
+ if(save_normals) {
+ i=0;
+ fprintf(fp,"$NodeData\n1\n\"VertexNormals\"\n1\n0.0\n3\n0\n%d\n%d\n",3,V.numels());
+ FOREACHVERTEX(v, n)
+ {
+   i++;
+   Normal = v->getNormal();
+   fprintf(fp,"%d %f %f %f\n",i,Normal.x,Normal.y,Normal.z);
+ }
+ fprintf(fp,"$EndNodeData\n");
+ }
+
+
+ // writing vertex masks
+ fprintf(fp,"$NodeData\n1\n\"VertexMasks\"\n1\n0.0\n3\n0\n%d\n%d\n",1,V.numels());
+ i=0; FOREACHVERTEX(v, n) { i++; fprintf(fp,"%d %d\n",i,v->mask); }
+ fprintf(fp,"$EndNodeData\n");
+
+
+ // writing triangle normals (separately for each shell)
+ if(save_normals) {
+ shellPtr = new Triangulation(this,1);
+ nShells = shellPtr->shells();
+ i=0;
+ fprintf(fp,"$ElementData\n1\n\"TriangleNormals\"\n1\n0.0\n3\n0\n%d\n%d\n",3,T.numels());
+ for(j=0; j<nShells; j++)
+ {
+    shellPtr2 = (Triangulation*) shellPtr->extractFirstShell();
+    JMesh::info("extractedShell: %d vertices and %d faces.\n",shellPtr2->V.numels(),shellPtr2->T.numels());
+
+    FOREACHVTTRIANGLE((&(shellPtr2->T)), t, n)
+     {
+        i++;
+        Normal = t->getNormal();
+        fprintf(fp,"%d %f %f %f\n",i,Normal.x,Normal.y,Normal.z);
+     }
+ }
+ fprintf(fp,"$EndElementData\n");
+ }
+
+
+ // writing triangle masks (separately for each shell)
+ shellPtr = new Triangulation(this,1);
+ nShells = shellPtr->shells();
+
+ // copy mask bits from original Triangulation (V,T,E) to shellPtr
+ norg = T.head();
+ FOREACHVTTRIANGLE((&(shellPtr->T)),t, n) { torg = (Triangle *)norg->data; t->mask = torg->mask; norg = norg->next(); }
+
+ i=0;
+ fprintf(fp,"$ElementData\n1\n\"TriangleMasks\"\n1\n0.0\n3\n0\n%d\n%d\n",1,T.numels());
+ for(j=0; j<nShells; j++)
+ {
+    shellPtr2 = (Triangulation*) shellPtr->extractFirstShell(1);
+    JMesh::info("extractedShell: %d vertices and %d faces.\n",shellPtr2->V.numels(),shellPtr2->T.numels());
+
+    FOREACHVTTRIANGLE((&(shellPtr2->T)), t, n) { i++; fprintf(fp,"%d %d\n",i,t->mask); }
+ }
+ fprintf(fp,"$EndElementData\n");
+
+
+ // write out set bits of triangle mask byte as separate element data
+ if(maskByte) {
+     for(k=0; k<8; k++) {
+         if( maskByte & 1<<k) {
+             JMesh::info("writing out triangle maskBit %d.\n",k);
+
+             shellPtr = new Triangulation(this,1);
+             nShells = shellPtr->shells();
+
+             // copy mask bits from original Triangulation (V,T,E) to shellPtr
+             norg = T.head();
+             FOREACHVTTRIANGLE((&(shellPtr->T)),t, n) { torg = (Triangle *)norg->data; t->mask = torg->mask; norg = norg->next(); }
+
+             i=0;
+             fprintf(fp,"$ElementData\n1\n\"TriangleBit %d\"\n1\n0.0\n3\n0\n%d\n%d\n",k,1,T.numels());
+             for(j=0; j<nShells; j++)
+             {
+                shellPtr2 = (Triangulation*) shellPtr->extractFirstShell(1);
+                JMesh::info("extractedShell: %d vertices and %d faces.\n",shellPtr2->V.numels(),shellPtr2->T.numels());
+
+                FOREACHVTTRIANGLE((&(shellPtr2->T)), t, n) { i++; fprintf(fp,"%d %d\n",i,IS_BIT(t,k)); }
+             }
+             fprintf(fp,"$EndElementData\n");
+         }
+     }
+ }
+
+ fclose(fp);
+
+ // free memory of info fields
+ FOREACHVERTEX(v, n) free(v->info);
+
+ return 0;
+}
+
+////////////////////// Saves FreeSurfer format ///////////////////////////
+int Triangulation::saveFSMESH(const char *fname, float xshift)
+{
+
+  FILE *fp;
+  char triname[256], IsLittleEndian=0;
+  unsigned char mnpart1=255, mnpart2=254; // used for the "TRIANGLE_FILE_MAGIC_NUMBER"
+  int vnum, fnum, i, v1, v2, v3, *hlpPtr;
+  Node *n;
+  Vertex *v;
+  float x, y, z;
+  Triangle *t;
+
+  mergeCoincidentEdges();
+
+  vnum = V.numels();
+  fnum = T.numels();
+  JMesh::info("saveFSMESH: Saving %d vertices and %d faces.\n",vnum,fnum);
+
+  // little endian machine?
+  short int word = 0x0001;
+  char *byte = (char *) &word;
+  IsLittleEndian = byte[0];
+  IsLittleEndian? JMesh::info("Little_Endian machine\n") : JMesh::info("Big_Endian machine\n");
+
+  // open output file
+  strcpy(triname,fname);
+  if ((fp = fopen(triname,"wb")) == NULL)
+  {
+    JMesh::warning("Can't open '%s' for output !\n",triname);
+    return 1;
+  }
+
+  // write "TRIANGLE_FILE_MAGIC_NUMBER" (defined as 16777214) to indicate that this is a binary triangle file
+  // see fwrite3.m
+  fwrite ( &mnpart1, sizeof(unsigned char), 1, fp );
+  fwrite ( &mnpart1, sizeof(unsigned char), 1, fp );
+  fwrite ( &mnpart2, sizeof(unsigned char), 1, fp );
+
+  // write two text lines
+  fprintf(fp,"created by MeshFix\n\n");
+
+  // write number of vertices and faces (i.e., triangles)
+  IsLittleEndian? fwrite ( SwapEndian(&vnum, sizeof(int)), sizeof(int), 1, fp ) : fwrite ( &vnum, sizeof(int), 1, fp );
+  IsLittleEndian? fwrite ( SwapEndian(&fnum, sizeof(int)), sizeof(int), 1, fp ) : fwrite ( &fnum, sizeof(int), 1, fp );
+
+  // write vertice coordinates and give vertex unique number (using info field)
+  i=0;
+  FOREACHVERTEX(v, n) {
+      x=v->x+xshift; y=v->y; z=v->z;
+      IsLittleEndian? fwrite ( SwapEndian(&x, sizeof(float)), sizeof(float), 1, fp ) : fwrite ( &x, sizeof(float), 1, fp );
+      IsLittleEndian? fwrite ( SwapEndian(&y, sizeof(float)), sizeof(float), 1, fp ) : fwrite ( &y, sizeof(float), 1, fp );
+      IsLittleEndian? fwrite ( SwapEndian(&z, sizeof(float)), sizeof(float), 1, fp ) : fwrite ( &z, sizeof(float), 1, fp );
+
+      v->info = (int *) malloc(sizeof(int));
+      hlpPtr = (int *) v->info; // give vertex unique number; needed for triangle definition in msh format (see below)
+      *hlpPtr = i;
+      i++;
+  }
+
+  // write vertex numbers of triangles
+  FOREACHTRIANGLE(t, n) {
+      v1= *((int*) t->v1()->info); v2= *((int*) t->v2()->info); v3= *((int*) t->v3()->info);
+      IsLittleEndian? fwrite ( SwapEndian(&v1, sizeof(int)), sizeof(int), 1, fp ) : fwrite ( &v1, sizeof(int), 1, fp );
+      IsLittleEndian? fwrite ( SwapEndian(&v2, sizeof(int)), sizeof(int), 1, fp ) : fwrite ( &v2, sizeof(int), 1, fp );
+      IsLittleEndian? fwrite ( SwapEndian(&v3, sizeof(int)), sizeof(int), 1, fp ) : fwrite ( &v3, sizeof(int), 1, fp );
+  }
+
+  // close file and free memory of info fields
+  fclose(fp);
+  FOREACHVERTEX(v, n) free(v->info);
+  return 0;
 }

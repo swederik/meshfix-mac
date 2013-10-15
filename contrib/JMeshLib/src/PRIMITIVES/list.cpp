@@ -114,6 +114,11 @@ void List::joinTailList(List *l)
  l->l_head = l->l_tail = NULL; l->l_numels = 0;
 }
 
+void List::joinHeadList(List *l) {
+    l->joinTailList(this);
+    this->joinTailList(l);
+}
+
 //// Removes the first node and returns the corresponding data /////
 
 void *List::popHead()

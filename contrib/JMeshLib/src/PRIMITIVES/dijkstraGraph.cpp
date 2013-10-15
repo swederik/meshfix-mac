@@ -64,13 +64,13 @@ dijkstraEdge *dijkstraGraph::createEdge(dijkstraNode *n1, dijkstraNode *n2, doub
  return ne;
 }
 
-void dijkstraGraph::runDijkstra(dijkstraNode *n0, bool use_distances)
+void dijkstraGraph::runDijkstra(dijkstraNode *n0)
 {
  Node *n;
  dijkstraEdge *de;
  dijkstraNode *dn, *dd;
  double d;
- FOREACHNODE(nodes, n) {dn=((dijkstraNode *)n->data); dn->mask=0; if (!use_distances) dn->dist = DBL_MAX;}
+ FOREACHNODE(nodes, n) {dn=((dijkstraNode *)n->data); dn->dist = DBL_MAX; dn->mask=0;}
 
  n0->dist = 0.0;
  ch->push(n0);
@@ -93,39 +93,4 @@ void dijkstraGraph::runDijkstra(dijkstraNode *n0, bool use_distances)
    }
   }
  }
-}
-
-
-double dijkstraGraph::computeDistance(dijkstraNode *n0, dijkstraNode *n1)
-{
- Node *n;
- dijkstraEdge *de;
- dijkstraNode *dn, *dd;
- double d;
- FOREACHNODE(nodes, n) {dn=((dijkstraNode *)n->data); dn->mask=0; dn->dist = DBL_MAX;}
-
- n0->dist = 0.0;
- ch->push(n0);
-
- while ((dn=ch->popHead())!=NULL)
- {
-  if (dn == n1) {while (ch->popHead()!=NULL); return n1->dist;}
-  dn->mask=1;
-  FOREACHNODE(dn->edges, n)
-  {
-   de = ((dijkstraEdge *)n->data);
-   dd = (dijkstraNode *)de->oppositeNode(dn);
-   if (dd->mask == 0)
-   {
-    d = dn->dist + de->cost;
-    if (d < dd->dist)
-    {
-     dd->dist = d;
-     ch->update(dd);
-    }
-   }
-  }
- }
-
- return DBL_MAX;
 }

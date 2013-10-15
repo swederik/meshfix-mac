@@ -46,23 +46,24 @@ class JMesh
 
  static double acos_tolerance;
  static FILE *historyFile;
- static void (*display_message)(char *, int);
- static char *app_name;
- static char *app_version;
- static char *app_year;
- static char *app_authors;
- static char *app_url;
- static char *app_maillist;
+ static void (*display_message)(const char *, int);
+ static const char *app_name;
+ static const char *app_version;
+ static const char *app_year;
+ static const char *app_authors;
+ static const char *app_url;
+ static const char *app_maillist;
  static bool quiet;
+ static bool global_quiet;
 
- static void init(double = 0.0001, FILE * =NULL, void (*)(char *, int) = NULL);
+ static void init(double = 0.0001, FILE * =NULL, void (*)(const char *, int) = NULL);
 
  static void info(const char *, ...);
  static void warning(const char *, ...);
  static void error(const char *, ...);
- static void begin_progress();
+ static void begin_progress(bool newline = false);
  static void report_progress(const char *, ...);
- static void end_progress();
+ static void end_progress(bool newline = true);
 };
 
 #define DISPMSG_ACTION_SETWIDGET	1
