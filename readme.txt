@@ -4,20 +4,9 @@ by Marco Attene
 IMATI-GE / CNR
 ---------------
 
-This software takes as input a polygon mesh and produces a copy of the input
-where all the occurrences of a specific set of "defects" are corrected. MeshFix
-has been designed to correct typical flaws present in RAW DIGITIZED mesh
-models, thus it might fail or produce coarse results if run on other sorts of
-input meshes (e.g. tessellated CAD models). When the software fails, it appends
-a textual description to the file "meshfix.log".
+This software takes as input a polygon mesh and produces a copy of the input where all the occurrences of a specific set of "defects" are corrected. MeshFix has been designed to correct typical flaws present in RAW DIGITIZED mesh models, thus it might fail or produce coarse results if run on other sorts of input meshes (e.g. tessellated CAD models). When the software fails, it appends a textual description to the file "meshfix.log".
 
-The input is assumed to represent a single CLOSED SOLID OBJECT, thus the output
-will be a SINGLE WATERTIGHT TRIANGLE MESH bounding a polyhedron. All the
-singularities, self-intersections and degenerate elements are removed from the
-input, while regions of the surface without defects are left unmodified.
-Accepted input formats are OFF, PLY and STL. Other formats are supported only
-partially. See http://jmeshlib.sourceforge.net for details on supported
-formats.
+The input is assumed to represent a single CLOSED SOLID OBJECT, thus the output will be a SINGLE WATERTIGHT TRIANGLE MESH bounding a polyhedron. All the singularities, self-intersections and degenerate elements are removed from the input, while regions of the surface without defects are left unmodified. Accepted input formats are OFF, PLY and STL. Other formats are supported only partially. See http://jmeshlib.sourceforge.net for details on supported formats.
 
 -----------------------------
 ALGORITHM AND CITATION POLICY
@@ -28,10 +17,7 @@ To better understand how the algorithm works, please refer to the following pape
    A lightweight approach to repairing digitized polygon meshes.
    The Visual Computer, 2010. (c) Springer. DOI: 10.1007/s00371-010-0416-3
 
-This software is based on ideas published therein. If you use MeshFix for
-research purposes you should cite the above paper in your published results.
-MeshFix cannot be used for commercial purposes without a written permission by
-the author.
+This software is based on ideas published therein. If you use MeshFix for research purposes you should cite the above paper in your published results. MeshFix cannot be used for commercial purposes without a written permission by the author.
 
 ----------
 PARAMETERS
